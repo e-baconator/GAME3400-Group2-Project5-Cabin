@@ -8724,7 +8724,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 503919427}
+  m_Mesh: {fileID: 572127197}
 --- !u!33 &178133357
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -36797,7 +36797,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 790179996}
+  m_Mesh: {fileID: 659155266}
 --- !u!33 &1301028283
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -39492,7 +39492,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1386305348
 MonoBehaviour:
   m_ObjectHideFlags: 0
