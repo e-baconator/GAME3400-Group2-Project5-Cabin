@@ -21,7 +21,7 @@ public class Interaction : MonoBehaviour
     {
         GameObject g = other.gameObject;
         Interactable c = g.GetComponent<Interactable>();
-        if(c != null)
+        if(c != null && !c.activated)
         {
             current = c;
             g.GetComponent<MeshRenderer>().material = highlight;

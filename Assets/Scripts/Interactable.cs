@@ -1,21 +1,31 @@
 using System.Collections;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 
 public class Interactable : MonoBehaviour
 {
-    [SerializeField] private string itext;
+    [SerializeField] public string itext;
     [SerializeField] private AudioClip iclip;
     [SerializeField] public Material normal;
+    private WindowTrigger wt;
     private TextMeshProUGUI UIText;
-
     private AudioSource source;
+
+    public bool activated = false;
 
     private void Start()
     {
         UIText = GameObject.FindGameObjectWithTag("UIText").GetComponent<TextMeshProUGUI>();
-        source = GetComponent<AudioSource>();
-        source.clip = iclip;
+        if (GetComponent<AudioSource>() != null)
+        {
+            source = GetComponent<AudioSource>();
+            source.clip = iclip;
+        }
+        if (GetComponent<WindowTrigger>() != null)
+        {
+            wt = GetComponent<WindowTrigger>();
+        }
     }
 
     public void Interact()
@@ -29,12 +39,17 @@ public class Interactable : MonoBehaviour
         {
             source.Play();
         }
+        gameObject.GetComponent<MeshRenderer>().material = normal;
+        if (wt != null)
+            wt.Activate();
+        activated = true;
     }
 
     private IEnumerator DisplayText()
     {
         UIText.text = itext;
         yield return new WaitForSeconds(5);
-        UIText.text = "";
+        if (UIText.text == itext)
+            UIText.text = "";
     }
 }
