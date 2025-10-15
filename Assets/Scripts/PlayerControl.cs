@@ -27,7 +27,7 @@ public class PlayerControl : MonoBehaviour
         look.y += Input.GetAxisRaw("Mouse Y") * lookSense;
         look.y = Mathf.Clamp(look.y, -90, 90);
         cameraTransform.localRotation = Quaternion.Euler(-look.y, 0, 0);
-        transform.localRotation = Quaternion.Euler(0, look.x + 90, 0);
+        transform.localRotation = Quaternion.Euler(0, look.x - 90, 0);
 
         horizontalInput = Input.GetAxisRaw("Horizontal") * moveSpeed;
         verticalInput = Input.GetAxisRaw("Vertical") * moveSpeed;
